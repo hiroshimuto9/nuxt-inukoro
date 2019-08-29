@@ -1,7 +1,7 @@
 <template>
 	<nav class="navbar">
 			<div class="navbar-brand">
-				<nuxt-link to="/breeds" class="navbar-item">イヌコロ</nuxt-link>
+				<nuxt-link to="/" class="navbar-item">イヌコロ</nuxt-link>
 			</div>
 	</nav>
 </template>
