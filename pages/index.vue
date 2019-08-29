@@ -2,8 +2,7 @@
   <section class="container">
     <div>
       <div v-for="(item, i) in breed_list" v-bind:key="i">
-        <a class="button">{{i}}</a>
-
+        <nuxt-link :to="{path: 'dogs/' + i }" class="button">{{i}}</nuxt-link>
       </div>
     </div>
   </section>
