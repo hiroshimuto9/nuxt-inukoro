@@ -1,21 +1,9 @@
 <template>
   <section class="container">
     <div>
-      <h1 class="title">
-        inukoro
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+      <div v-for="(item, i) in breed_list" v-bind:key="i">
+        <a class="button">{{i}}</a>
+
       </div>
     </div>
   </section>
@@ -23,12 +11,14 @@
 
 <script>
 import dogApi from '@/api/dog'
+import {mapState} from 'vuex'
 
 export default {
   async fetch({store}) {
     let json = await dogApi.breeds();
     store.commit('breed_list_update', json)
   },
+  computed: mapState(['breed_list']),
 }
 </script>
 
